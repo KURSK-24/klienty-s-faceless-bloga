@@ -188,14 +188,25 @@
   .announce-accent{color:var(--blood);}
 
   .cta-plate{
-    display:block; text-align:center; text-decoration:none;
+    display:block; position:relative; text-align:center; text-decoration:none;
     font-family:'Unbounded'; font-weight:800; font-size:clamp(19px,3.8vw,24px);
     color:#FFF6EE; background:linear-gradient(135deg, var(--blood) 0%, var(--blood-deep) 100%);
     border-radius:20px; padding:26px 24px; margin:32px 0 10px;
-    box-shadow:0 22px 46px -20px color-mix(in srgb, var(--blood) 60%, transparent);
+    box-shadow:0 22px 46px -20px color-mix(in srgb, var(--blood) 70%, transparent);
     transition:transform .15s ease;
+    animation:super-glow-red 2.6s ease-in-out infinite;
   }
   .cta-plate:hover{transform:translateY(-1px);}
+  .cta-plate::after{
+    content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+    background:linear-gradient(115deg, transparent 35%, rgba(255,255,255,.4) 48%, transparent 62%);
+    background-size:250% 250%;
+    animation:super-shine 3.4s ease-in-out infinite;
+  }
+  @keyframes super-glow-red{
+    0%,100%{box-shadow:0 22px 46px -20px color-mix(in srgb, var(--blood) 55%, transparent);}
+    50%{box-shadow:0 22px 46px -14px color-mix(in srgb, var(--blood) 85%, transparent);}
+  }
 
   .quote{
     font-family:'PT Serif',serif; font-style:italic; font-size:17.5px; line-height:1.5;
