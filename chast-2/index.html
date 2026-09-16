@@ -210,6 +210,22 @@
     50%{box-shadow:0 22px 46px -14px color-mix(in srgb, var(--blood) 85%, transparent);}
   }
 
+  .urgency-plate{
+    position:relative; text-align:center;
+    font-family:'Unbounded'; font-weight:800; font-size:clamp(22px,4.6vw,30px); line-height:1.3;
+    color:#FFF6EE; background:linear-gradient(135deg, var(--blood) 0%, var(--blood-deep) 100%);
+    border-radius:20px; padding:26px 22px; margin:0 0 8px;
+    box-shadow:0 22px 46px -20px color-mix(in srgb, var(--blood) 70%, transparent);
+    animation:super-glow-red 2.6s ease-in-out infinite;
+  }
+  .urgency-plate-accent{color:var(--gold-soft);}
+  .urgency-plate::after{
+    content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+    background:linear-gradient(115deg, transparent 35%, rgba(255,255,255,.4) 48%, transparent 62%);
+    background-size:250% 250%;
+    animation:super-shine 3.4s ease-in-out infinite;
+  }
+
   .quote{
     font-family:'PT Serif',serif; font-style:italic; font-size:17.5px; line-height:1.5;
     color:var(--ink-soft); border-left:3px solid var(--line); padding:2px 0 2px 20px; margin:24px 0;
@@ -1027,7 +1043,7 @@
   </div>
 </section>
 
-<section class="stage" id="tariffs">
+<section class="stage" id="tariffs" style="padding-bottom:20px;">
   <div class="wrap">
     <span class="kicker">Но сегодня — на особых условиях</span>
     <h2>Выбери свой формат входа</h2>
@@ -1080,9 +1096,9 @@
   </div>
 </section>
 
-<section class="stage">
+<section class="stage" style="padding-top:18px;">
   <div class="wrap">
-    <span class="kicker">Почему мы даём такую стоимость сейчас</span>
+    <h2 style="text-align:center;">Почему мы даём такую стоимость сейчас?</h2>
     <p style="margin-top:14px;">Потому что нам важно не просто «поставить высокий чек ради высокого чека». Нам важно, чтобы ты реально зашла, внедрила и получила результат.</p>
     <p>Я знаю, как много людей уже устали:</p>
     <ul class="cross">
@@ -1095,7 +1111,7 @@
 
     <div class="divider" style="margin:34px 0;"></div>
 
-    <h2 style="text-align:center;">Но такие условия действуют только <span class="grad">24 часа</span></h2>
+    <div class="urgency-plate">Но такие условия<br>действуют только<br><span class="urgency-plate-accent">24 часа</span></div>
     <p style="margin-top:14px;">Потому что решение либо принимается сейчас, либо снова уходит в бесконечное «я ещё подумаю», «я потом вернусь», «я как-нибудь позже».</p>
     <p>А потом проходит неделя. Потом месяц. И всё остаётся как было:</p>
     <ul class="cross">
