@@ -415,29 +415,5 @@
   </div>
 </footer>
 
-<div class="sticky-cta" id="stickyCta">
-  <div class="sticky-inner">
-    <div class="sticky-copy"><b>Часть 1 из 2</b>математика, кейсы и первая механика</div>
-    <a class="btn btn-primary" href="https://kursk-24.github.io/klienty-s-faceless-bloga/chast-2/" style="padding:12px 20px;">Читать дальше</a>
-  </div>
-</div>
-
-<script>
-  (function(){
-    var bar = document.getElementById('stickyCta');
-    var hero = document.querySelector('header.banner-wrap');
-    if(!bar || !hero) return;
-    var shown = false;
-    function onScroll(){
-      var trigger = hero.offsetHeight + 40;
-      var y = window.scrollY || window.pageYOffset;
-      var atBottom = (window.innerHeight + y) >= document.body.scrollHeight - 40;
-      var should = y > trigger && !atBottom;
-      if(should !== shown){ shown = should; bar.classList.toggle('show', should); }
-    }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-  })();
-</script>
 </body>
 </html>
